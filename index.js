@@ -6,7 +6,7 @@ app.enable('trust proxy');
 app.get("/sa", (req, res) => {
   const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-  res.send(`SA`);
+  res.send(`${clientIP}`);
 });
 
 const PORT = process.env.PORT || 3000;
