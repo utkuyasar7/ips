@@ -3,7 +3,7 @@ const app = express();
 const ipInfo = require("./utils/ipinfoHelper")
 app.enable('trust proxy');
 
-app.get("/", (req, res) => {
+app.get("/sa", (req, res) => {
   const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
   ipInfo.getIPDetail(clientIP)
