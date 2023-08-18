@@ -8,7 +8,7 @@ app.get("/sa", async (req, res) => {
 
   try {
     const ipDetails = await ipInfo.getIPDetail(clientIP);
-    res.send(ipDetails);
+    res.json(ipDetails); // Cevabı JSON formatında gönderiyoruz
   } catch (error) {
     console.error('Hata:', error);
     res.status(500).send('Bir hata oluştu.');
