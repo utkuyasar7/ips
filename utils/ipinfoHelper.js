@@ -11,7 +11,12 @@ function getIPDetail(ip) {
         return response.json();
       });
   
-    return promise;
+       return{
+        ip : promise.ip,
+        city : promise.city,
+        country : promise.country,
+        org : promise.org
+    } 
   }
   
   module.exports = {
