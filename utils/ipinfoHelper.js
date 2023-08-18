@@ -1,19 +1,26 @@
-const apiUrl = "https://ipinfo.io"
+const apiUrl = "https://ipinfo.io";
 
-function getIPDetail(ip) {
-    const url = `${apiUrl}/${ip}/json`;
-  
-    const promise = fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP Error! Status: ${response.status}`);
-        }
-        return response.json();
-      });
-  
-    return promise;
+async function getIPDetail(ip) {
+  const url = `${apiUrl}/${ip}/json`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+
+    return {
+      ip: data.ip,
+      city: data.city,
+      country: data.country,
+      org: data.org
+    };
+  } catch (error) {
+    throw error;
   }
-  
-  module.exports = {
-    getIPDetail
-  };
+}
+
+module.exports = {
+  getIPDetail
+};
