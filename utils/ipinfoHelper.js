@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 const apiUrl = "https://ipinfo.io";
 
+=======
+
+
+const apiUrl = "https://ipinfo.io";
+
+>>>>>>> ca93057544740ffbfcc5c1f1bf4521c783fcbeb2
 async function getIPDetail(ip) {
   const url = `${apiUrl}/${ip}/json`;
 
@@ -23,4 +30,8 @@ async function getIPDetail(ip) {
 
 module.exports = {
   getIPDetail
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> ca93057544740ffbfcc5c1f1bf4521c783fcbeb2
