@@ -6,7 +6,6 @@ app.enable('trust proxy');
 app.get("/sa", (req, res) => {
   const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-  ipInfo.getIPDetail(clientIP)
 
   res.send( ipInfo.getIPDetail(clientIP));
 });
