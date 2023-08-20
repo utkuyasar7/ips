@@ -27,7 +27,7 @@ async function searchDomain(req, res) {
     res.json({ domain,ipDetails});
   } catch (error) {
     console.error('Hata:', error);
-    res.status(500).send("hata");
+    res.status(500).send({"hata"});
   }
 }
 module.exports = {
