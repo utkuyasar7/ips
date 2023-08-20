@@ -7,7 +7,7 @@ const cors = require('cors');
 
 // CORS ayarlarını özelleştirme
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: '*',
   methods: 'GET,POST',
   optionsSuccessStatus: 200
 };
