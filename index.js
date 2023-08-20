@@ -7,7 +7,7 @@ const cors = require('cors');
 
 // CORS ayarlarını özelleştirme
 const corsOptions = {
-  origin: '*',
+  origin: 'https://ipsclient.vercel.app',
   methods: 'GET,POST',
   optionsSuccessStatus: 200
 };
