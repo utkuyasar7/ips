@@ -20,10 +20,8 @@ async function searchDomain(req, res) {
     console.log("1. Domain:", domain);
     
     const ips = await dnsHelper.resolveDomainToIPs(domain);
-    console.log("2. IPs:", ips);
-
     const ipDetails = await ipInfoHelper.getIPDetail(ips);
-    console.log("3. IP Details:", ipDetails);
+    
 
     res.json({ domain, ipDetails });
   } catch (error) {
@@ -32,12 +30,12 @@ async function searchDomain(req, res) {
     console.log("1. Domain (Error Case):", domain);
     
     const ips = await dnsHelper.resolveDomainToIPs(domain);
-    console.log("2. IPs (Error Case):", ips);
+    
 
     const ipDetails = await ipInfoHelper.getIPDetail(ips);
-    console.log("3. IP Details (Error Case):", ipDetails);
+    
 
-    res.status(500).send('Bir hata oluştu.');
+    res.status(500).send({domain,ipDetails});
   }
 }
 
