@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 // domain rotalarını dahil etme
 app.use('/domain', domainRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 app.listen(PORT, () => {
   console.log(`Server ${PORT} numaralı portta çalışıyor.`);
 });

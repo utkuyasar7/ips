@@ -18,15 +18,18 @@ async function searchDomain(req, res) {
 
   try {
     const ips = await dnsHelper.resolveDomainToIPs(domain);
-    const sameIpsDomains = await Promise.all(ips.map(ip => dnsHelper.findDomainsWithSameIP(ip)));
+    const ipDetails = await ipInfoHelper.getIPDetail(ips);
     
-    res.json({ domain, ips, sameIpsDomains });
+    
+
+ 
+
+    res.json({ domain,ipDetails});
   } catch (error) {
     console.error('Hata:', error);
     res.status(500).send('Bir hata oluştu.');
   }
 }
-
 module.exports = {
   IPController,
   searchDomain

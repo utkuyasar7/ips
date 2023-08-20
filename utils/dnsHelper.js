@@ -12,19 +12,10 @@ async function resolveDomainToIPs(domain) {
   });
 }
 
-async function findDomainsWithSameIP(ipAddress) {
-  return new Promise((resolve, reject) => {
-    dns.reverse(ipAddress, (err, hostnames) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve(hostnames);
-    });
-  });
-}
+
+
 
 module.exports = {
   resolveDomainToIPs,
-  findDomainsWithSameIP
+
 };
