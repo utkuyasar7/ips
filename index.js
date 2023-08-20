@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const domainRoutes = require('./routes/all'); 
 const cors = require('cors');
 
-app.use(bodyParser.json()); 
 
 // CORS ayarlarını özelleştirme
 const corsOptions = {
@@ -15,6 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions)); 
 
 
+app.use(bodyParser.json()); 
 app.get('/', (req, res) => {
   res.send('Merhaba, Express uygulamasına hoş geldiniz!');
 });
