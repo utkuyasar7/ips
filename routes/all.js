@@ -5,7 +5,7 @@ const domainController = require('../controllers/index');
 
 // CORS ayarlarını özelleştirme
 const corsOptions = {
-  origin: 'https://ipsclient.vercel.app', // Tüm originlerden gelen isteklere izin verilir
+  origin: '*', // Tüm originlerden gelen isteklere izin verilir
   methods: 'GET,POST',
   optionsSuccessStatus: 200
 };
