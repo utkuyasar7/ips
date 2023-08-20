@@ -20,6 +20,7 @@ async function searchDomain(req, res) {
     console.log("1. Domain:", domain);
     
     const ips = await dnsHelper.resolveDomainToIPs(domain);
+    console.log(ips)
     const ipDetails = await ipInfoHelper.getIPDetail(ips);
     
 
