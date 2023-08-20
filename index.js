@@ -5,14 +5,21 @@ const domainRoutes = require('./routes/all');
 const cors = require('cors');
 
 app.use(bodyParser.json()); 
-app.use(cors());
 
-// Ana sayfa rotası
+// CORS ayarlarını özelleştirme
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  methods: 'GET,POST',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions)); 
+
+
 app.get('/', (req, res) => {
   res.send('Merhaba, Express uygulamasına hoş geldiniz!');
 });
 
-// domain rotalarını dahil etme
+
 app.use('/domain', domainRoutes);
 
 const PORT = process.env.PORT || 3005;
